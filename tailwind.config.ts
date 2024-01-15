@@ -31,8 +31,8 @@ const config: Config = {
       transparent: "transparent",
     },
     fontFamily: {
-      sans: ["var(--custom-font)"], // fonts.ts에서 variable로 설정한 CSS 변수를 불러와 적용합니다.
-      serif: ["var(--custom-font)"], // fonts.ts에서 variable로 설정한 CSS 변수를 불러와 적용합니다.
+      sans: ["var(--custom-font)"],
+      serif: ["var(--custom-font)"],
     },
     extend: {
       spacing: {
