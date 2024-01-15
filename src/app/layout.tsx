@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/global.css";
 import Header from "@/app/ui/common/Header";
+import Footer from "@/app/ui/common/Footer";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
@@ -40,9 +41,8 @@ export default function RootLayout({
     <html lang="en" className={SpoqaHanSansNeo.variable}>
       <body>
         <Header />
-        <div className="flex-grow p-6 md:overflow-y-auto md:p-12">
-          {children}
-        </div>
+        <>{children}</>
+        <Footer />
       </body>
     </html>
   );
