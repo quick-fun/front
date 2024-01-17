@@ -11,6 +11,6 @@ body {
   }
 
   .main-container {
-    @apply m-auto flex h-dvh w-full max-w-screen-lg flex-col items-center justify-start p-4;
+    @apply m-auto flex w-full max-w-screen-lg flex-col items-center justify-start p-4;
   }
 }
