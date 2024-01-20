@@ -5,12 +5,41 @@
 body {
 }
 
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+}
+
 @layer components {
+  .main-container {
+    @apply m-auto flex w-full max-w-screen-lg flex-col items-center justify-start p-4;
+  }
+
   .btn-blue {
     @apply rounded bg-blue px-4 py-2 font-medium text-white;
   }
 
-  .main-container {
-    @apply m-auto flex h-dvh w-full max-w-screen-lg flex-col items-center justify-start p-4;
+  /* Poll */
+  .poll-container {
+    @apply relative flex h-[62px] w-full items-center justify-center rounded-lg border border-white bg-white;
+  }
+
+  .poll-container-mine {
+    @apply border-blue;
+  }
+
+  .poll-mine {
+    @apply absolute left-0 h-full rounded-lg border-blue bg-blue opacity-50;
+  }
+
+  .poll-not-mine {
+    @apply absolute left-0 h-full rounded-lg border-b-gray-light bg-gray-white opacity-50;
   }
 }

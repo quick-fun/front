@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const SpoqaHanSansNeo = localFont({
   src: [
     {
-      path: "../../public/font/SpoqaHanSansNeo-Light.ttf",
+      path: "../../public/font/SpoqaHanSansNeo-Regular.ttf",
       weight: "400",
       style: "normal",
     },
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={SpoqaHanSansNeo.variable}>
+    <html lang="en" className={`${SpoqaHanSansNeo.variable} w-screen`}>
       <body>
         <Header />
         <>{children}</>
