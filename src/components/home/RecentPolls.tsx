@@ -1,16 +1,21 @@
 "use client";
+import { useEffect } from "react";
 import PollBox from "./PollBox";
 
-function onClickPollBox(e: any) {
+async function onClickPollBox(e: any) {
   // 1. poll id를 받아서 put 요청 보냄
   // 2. response가 오면 그걸 핸들링 함
   // 3. response에는 각각의 투표율이 와야됨
   // 4. 내가 클릭한 poll의 style을 면경해줌 클래스 변경함
   e.preventDefault();
   console.log(e);
+  const data = await (await fetch("http://localhost:8080/user")).json();
+  console.log(data);
 }
 
 export default function RecentPoll() {
+  // const onClick = async (e: any) => {};
+
   return (
     <section className="item-center flex h-fit w-full flex-col justify-center gap-3">
       <PollBox
@@ -22,7 +27,7 @@ export default function RecentPoll() {
         option_b="돈까스 먹어라"
         time={1}
         comments={100}
-        onClickPoll={(e) => onClickPollBox(e)}
+        onClickPoll={onClickPollBox}
       />
       <PollBox
         tag="#일상"

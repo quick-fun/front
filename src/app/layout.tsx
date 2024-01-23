@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import Header from "@/app/ui/common/Header";
 import Footer from "@/app/ui/common/Footer";
 import localFont from "next/font/local";
+import { MSWComponent } from "./_component/MSWComponent";
 
 export const metadata: Metadata = {
   title: "Quick Fun",
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${SpoqaHanSansNeo.variable} w-screen`}>
       <body>
+        <MSWComponent />
         <Header />
         <>{children}</>
         <Footer />
