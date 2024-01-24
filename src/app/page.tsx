@@ -1,11 +1,11 @@
 import Image from "next/image";
-import RecentPoll from "@/components/home/RecentPolls";
+import RecentVotes from "@/components/home/RecentVotes";
 
 export default function Home() {
   return (
     <main className="main-container mt-16">
-      <section>🔥 실시간 Hot</section>
-      <RecentPoll />
+      <section className="flex w-full mb-2 h-[500px] rounded bg-blue">🔥 실시간 Hot</section>
+      <RecentVotes />
     </main>
   );
 }

@@ -26,20 +26,20 @@ body {
     @apply rounded bg-blue px-4 py-2 font-medium text-white;
   }
 
-  /* Poll */
-  .poll-container {
+  /* Vote */
+  .vote-container {
     @apply relative flex h-[62px] w-full items-center justify-center rounded-lg border border-white bg-white;
   }
 
-  .poll-container-mine {
+  .vote-container-mine {
     @apply border-blue;
   }
 
-  .poll-mine {
+  .vote-mine {
     @apply absolute left-0 h-full rounded-lg border-blue bg-blue opacity-50;
   }
 
-  .poll-not-mine {
+  .vote-not-mine {
     @apply absolute left-0 h-full rounded-lg border-b-gray-light bg-gray-white opacity-50;
   }
 }
