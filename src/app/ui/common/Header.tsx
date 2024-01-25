@@ -13,7 +13,7 @@ export default function Header() {
         <div className="font-bold">투표합쉬다🗳️</div>
         <Button
           className="flex items-center justify-center gap-1"
-          onClick={() => router.push("/create-vote")}
+          onClick={() => router.push("/login")}
         >
           로그인
           <ArrowLongRightIcon width={14} height={14} />
