@@ -10,7 +10,9 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-10 flex h-16 items-center justify-center border-b border-b-gray-light bg-white px-10">
       <div className="flex w-dvw max-w-screen-lg items-center justify-between">
-        <div className="font-bold">투표합쉬다🗳️</div>
+        <Link className="font-bold" href="/">
+          투표합쉬다🗳️
+        </Link>
         <Button
           className="flex items-center justify-center gap-1"
           onClick={() => router.push("/login")}
