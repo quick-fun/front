@@ -35,8 +35,10 @@ const SpoqaHanSansNeo = localFont({
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en" className={`${SpoqaHanSansNeo.variable} w-screen`}>
@@ -45,6 +47,7 @@ export default function RootLayout({
         <Header />
         <>{children}</>
         <Footer />
+        {modal}
       </body>
     </html>
   );
