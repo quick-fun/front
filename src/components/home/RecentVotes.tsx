@@ -8,13 +8,19 @@ async function onClickVoteBox(e: any) {
   // 3. response에는 각각의 투표율이 와야됨
   // 4. 내가 클릭한 poll의 style을 면경해줌 클래스 변경함
   e.preventDefault();
-  console.log(e);
-  const data = await (await fetch("http://localhost:8080/user")).json();
-  console.log(data);
+  const data = await fetch("http://localhost:8080/user?cursor=10?limit=10");
+  const parsedData = await data.json();
+
+  // const data = await (
+  //   await fetch("http://localhost:8080/posts", {
+  //     method: "POST",
+  //     body: JSON.stringify("test body"),
+  //   })
+  // ).json();
+  console.log(parsedData);
 }
 
 export default function RecentVote() {
-
   return (
     <section className="item-center flex h-fit w-full flex-col justify-center gap-3">
       <VoteBox
