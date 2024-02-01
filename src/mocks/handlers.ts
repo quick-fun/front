@@ -1,8 +1,9 @@
 import { http, HttpResponse } from "msw";
+import { GetPostsResponseBody } from "@/types/posts";
 
 export const handlers = [
-  http.get("/user", ({ request, params }) => {
-    return HttpResponse.json({
+  http.get("/posts", ({ request, params }) => {
+    return HttpResponse.json<GetPostsResponseBody>({
       data: [
         {
           votePostId: 1,
