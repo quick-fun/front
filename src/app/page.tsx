@@ -1,20 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import Image from "next/image";
 import RecentVotes from "@/components/home/RecentVotes";
 import CreateVoteButton from "@/components/common/CreateVoteBtn";
+import { GetPostsResponseBody } from "@/types/posts";
 
 export default function Home() {
+  const [votes, setVotes] = useState<GetPostsResponseBody>([]);
+
   useEffect(() => {
-    console.log("Main page GET test");
-
     async function getRecentVotes() {
-      const data = await fetch("http://localhost:8080/user?cursor=1?limit=10");
+      const data = await fetch("http://localhost:8080/posts?cursor=1?limit=10");
       const parsedData = await data.json();
-      console.log(parsedData);
+      setVotes(parsedData);
     }
-
     getRecentVotes();
   }, []);
 
@@ -23,7 +23,7 @@ export default function Home() {
       <section className="mb-2 flex h-[500px] w-full rounded bg-blue">
         🔥 실시간 Hot
       </section>
-      <RecentVotes />
+      <RecentVotes votes={votes} />
       <CreateVoteButton />
     </main>
   );
