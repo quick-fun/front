@@ -35,11 +35,15 @@ body {
     @apply border-blue;
   }
 
-  .vote-mine {
+  .vote-item-before {
+    @apply ml-3 w-full;
+  }
+
+  .vote-after-mine {
     @apply absolute left-0 h-full rounded-lg border-blue bg-blue opacity-50;
   }
 
-  .vote-not-mine {
+  .vote-after-not-mine {
     @apply absolute left-0 h-full rounded-lg border-b-gray-light bg-gray-white opacity-50;
   }
 }
