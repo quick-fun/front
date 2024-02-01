@@ -1,6 +1,9 @@
 import { http, HttpResponse } from "msw";
 import { GetPostsResponseBody } from "@/types/posts";
 
+const voteList = [];
+const requestList = [] as any[];
+
 export const handlers = [
   http.get("/posts", ({ request, params }) => {
     return HttpResponse.json<GetPostsResponseBody>({
@@ -23,12 +26,12 @@ export const handlers = [
           ],
           tag: {
             tagId: 1,
-            tagTitle: "태그명",
+            tagTitle: "#일상",
           },
           labels: [
             {
               labelId: 1,
-              labelTitle: "라벨명",
+              labelTitle: "박빙🔥",
             },
           ],
           createdAt: "2024-01-21T09:56:51.849339",
@@ -36,28 +39,28 @@ export const handlers = [
         },
         {
           votePostId: 2,
-          title: "두번째 제목입니다 제목입니다~~ 제목 테스트",
-          content: "오늘 저녁 뭐 먹을지 고민임",
+          title: "두번째 제목입니다 제목입니다~~ long long 제목 테스트",
+          content: "매일 집에 가고싶다.. 집에 있어도 집에 가고싶고 그렇다...",
           voteItems: [
             {
               voteItemId: 1,
-              voteItemTitle: "순두부찌개",
+              voteItemTitle: "ㅇㅈ",
               voteRate: 0,
             },
             {
               voteItemId: 2,
-              voteItemTitle: "김치찌개",
+              voteItemTitle: "ㄴㅇㅈ",
               voteRate: 100,
             },
           ],
           tag: {
             tagId: 1,
-            tagTitle: "태그명",
+            tagTitle: "#고민",
           },
           labels: [
             {
               labelId: 1,
-              labelTitle: "라벨명",
+              labelTitle: "압승💪🏻",
             },
           ],
           createdAt: "2024-01-21T09:56:51.849339",
@@ -65,17 +68,17 @@ export const handlers = [
         },
         {
           votePostId: 3,
-          title: "이것은 세번째 제목입니다 제목입니다~~ 제목 테스트",
-          content: "오늘 저녁 뭐 먹을지 고민임 ㄹㅇㅋㅋ",
+          title: "졸려 배고파",
+          content: "제곧내",
           voteItems: [
             {
               voteItemId: 1,
-              voteItemTitle: "순두부찌개",
+              voteItemTitle: "졸려",
               voteRate: 0,
             },
             {
               voteItemId: 2,
-              voteItemTitle: "김치찌개",
+              voteItemTitle: "졸리고 배고파 ㅠㅠ",
               voteRate: 100,
             },
           ],
@@ -95,12 +98,24 @@ export const handlers = [
       ],
     });
   }),
-  http.post("/posts", async ({ request }) => {
-    // Read the intercepted request body as JSON.
-    const newPost = await request.json();
+  // 투표하기
+  http.post(
+    "/posts/:votePostId/items/:voteItemId",
+    async ({ request, params }) => {
+      const { votePostId, voteItemId } = params;
+      voteList.push({ votePostId: votePostId, voteItemId: voteItemId });
+      requestList.push(request);
 
-    // Don't forget to declare a semantic "201 Created"
-    // response and send back the newly created post!
-    return HttpResponse.json(newPost, { status: 201 });
-  }),
+      // Don't forget to declare a semantic "201 Created"
+      // response and send back the newly created post!
+      return HttpResponse.json(
+        {
+          votePostId: votePostId,
+          voteItemId: voteItemId,
+          voteRate: 19,
+        },
+        { status: 201 },
+      );
+    },
+  ),
 ];
