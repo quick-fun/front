@@ -106,13 +106,29 @@ export const handlers = [
       voteList.push({ votePostId: votePostId, voteItemId: voteItemId });
       requestList.push(request);
 
+      const tempVoteRate = Math.round(Math.random() * 100);
+
       // Don't forget to declare a semantic "201 Created"
       // response and send back the newly created post!
       return HttpResponse.json(
+        // {
+        //   votePostId: votePostId,
+        //   voteItemId: voteItemId,
+        //   voteRate: Math.round(Math.random() * 100),
+        // },
+        // 투표 게시글에 투표 후
         {
           votePostId: votePostId,
-          voteItemId: voteItemId,
-          voteRate: 19,
+          voteItems: [
+            {
+              voteItemId: 1,
+              voteRate: tempVoteRate,
+            },
+            {
+              voteItemId: 2,
+              voteRate: 100 - tempVoteRate,
+            },
+          ],
         },
         { status: 201 },
       );
