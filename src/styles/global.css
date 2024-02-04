@@ -27,8 +27,13 @@ body {
   }
 
   /* Vote */
-  .vote-container {
-    @apply relative flex h-[62px] w-full items-center justify-center rounded-lg border border-white bg-white;
+
+  .vote-item-default {
+    @apply relative flex h-[62px] items-center justify-center rounded-lg border border-white bg-white;
+  }
+
+  .vote-item-after {
+    @apply bg-pink;
   }
 
   .vote-container-mine {

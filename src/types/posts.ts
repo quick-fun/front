@@ -1,6 +1,6 @@
 // 투표 게시글 페이징 목록 조회
 
-interface VoteItem {
+export interface VoteItem {
   voteItemId: number;
   voteItemTitle: string;
   voteRate: number;
