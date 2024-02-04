@@ -13,7 +13,9 @@ export default function Home() {
 
   useEffect(() => {
     async function getRecentVotes() {
-      const data = await fetch("http://localhost:8080/posts?cursor=1?limit=10");
+      const data = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/posts?cursor=1?limit=10`,
+      );
       const parsedData = await data.json();
       setVotes(parsedData);
     }

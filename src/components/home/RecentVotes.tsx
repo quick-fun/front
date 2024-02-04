@@ -22,7 +22,7 @@ export default function RecentVote({ votes }: RecentVotesProps) {
     // 4. 내가 클릭한 poll의 style을 면경해줌 클래스 변경함
     e.preventDefault();
     const data = await fetch(
-      `http://localhost:8080/posts/${votePostId}/items/${voteItemId}`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/posts/${votePostId}/items/${voteItemId}`,
       {
         method: "POST",
       },
