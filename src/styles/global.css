@@ -27,19 +27,28 @@ body {
   }
 
   /* Vote */
-  .vote-container {
-    @apply relative flex h-[62px] w-full items-center justify-center rounded-lg border border-white bg-white;
+
+  .vote-item-default {
+    @apply relative flex h-[62px] items-center justify-center rounded-lg border border-white bg-white;
+  }
+
+  .vote-item-after {
+    @apply bg-pink;
   }
 
   .vote-container-mine {
     @apply border-blue;
   }
 
-  .vote-mine {
+  .vote-item-before {
+    @apply ml-3 w-full;
+  }
+
+  .vote-after-mine {
     @apply absolute left-0 h-full rounded-lg border-blue bg-blue opacity-50;
   }
 
-  .vote-not-mine {
+  .vote-after-not-mine {
     @apply absolute left-0 h-full rounded-lg border-b-gray-light bg-gray-white opacity-50;
   }
 }
