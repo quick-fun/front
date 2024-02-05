@@ -111,12 +111,6 @@ export const handlers = [
       // Don't forget to declare a semantic "201 Created"
       // response and send back the newly created post!
       return HttpResponse.json(
-        // {
-        //   votePostId: votePostId,
-        //   voteItemId: voteItemId,
-        //   voteRate: Math.round(Math.random() * 100),
-        // },
-        // 투표 게시글에 투표 후
         {
           votePostId: votePostId,
           voteItems: [
@@ -134,4 +128,18 @@ export const handlers = [
       );
     },
   ),
+  http.post("/login/auth", async ({ request, params }) => {
+    const url = new URL(request.url);
+    const socialType = url.searchParams.get("socialType");
+
+    if (!socialType) {
+      return new HttpResponse(null, {
+        status: 404,
+      });
+    }
+
+    return HttpResponse.json({
+      socialType,
+    });
+  }),
 ];
