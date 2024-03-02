@@ -134,16 +134,17 @@ export const handlers = [
       data: [
         {
           votePostId: 1,
-          title: "투표 게시글 제목1",
-          content: "투표 게시글 댓글1",
+          title: "의대 정원 논란 이해 된다 vs 안된다",
+          content:
+            "요즘 의대 정원 확대 때문에 정부 vs. 의사가 맞서 의료 공백 문제로 시끌시끌하잖아요. 코로나19 같은 감염병 위기가 아닌데도 보건의료재난 경보 단계를 최상위인 ‘심각’ 상태인데요. 최근 정부가 전공의들이 병원에서 떠나며 생긴 의료 공백을 줄이기 위해 “비대면 진료, 확 허용해!” 해서 갑론을박이 벌어지고 있어요.",
           voteItems: [
             {
               voteItemId: 1,
-              voteItemTitle: "투표 항목 제목1",
+              voteItemTitle: "의대 정원 논란 이해간다",
             },
             {
               voteItemId: 2,
-              voteItemTitle: "투표 항목 제목2",
+              voteItemTitle: "의대 정원 논란 이해 안간다",
             },
           ],
           tag: {
@@ -165,16 +166,83 @@ export const handlers = [
         },
         {
           votePostId: 2,
-          title: "투표 게시글 제목2",
-          content: "투표 게시글 댓글2",
+          title: "데일 카네기의 인간 관계론 읽으신 분만",
+          content:
+            "타인을 바꾸려고 하지 말고 자기 자신을 바꾸라는 저자의 의견에 동의하시는지?",
           voteItems: [
             {
               voteItemId: 3,
-              voteItemTitle: "투표 항목 제목3",
+              voteItemTitle: "동의한다",
             },
             {
               voteItemId: 4,
-              voteItemTitle: "투표 항목 제목4",
+              voteItemTitle: "반대한다",
+            },
+          ],
+          tag: {
+            tagId: 1,
+            tagTitle: "잡담",
+          },
+          labels: [
+            {
+              labelId: 1,
+              labelTitle: "박빙",
+            },
+            {
+              labelId: 2,
+              labelTitle: "마감 직전",
+            },
+          ],
+          createdAt: "2023-12-27T16:07:12",
+          commentTotalCount: 999,
+        },
+        {
+          votePostId: 3,
+          title:
+            "긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 ",
+          content:
+            "타인을 바꾸려고 하지 말고 자기 자신을 바꾸라는 저자의 의견에 동의하시는지?",
+          voteItems: [
+            {
+              voteItemId: 3,
+              voteItemTitle: "동의한다",
+            },
+            {
+              voteItemId: 4,
+              voteItemTitle: "반대한다",
+            },
+          ],
+          tag: {
+            tagId: 1,
+            tagTitle: "잡담",
+          },
+          labels: [
+            {
+              labelId: 1,
+              labelTitle: "박빙",
+            },
+            {
+              labelId: 2,
+              labelTitle: "마감 직전",
+            },
+          ],
+          createdAt: "2023-12-27T16:07:12",
+          commentTotalCount: 999,
+        },
+        {
+          votePostId: 4,
+          title:
+            "긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 긴긴 제목 테스트 ",
+          content:
+            "타인을 바꾸려고 하지 말고 자기 자신을 바꾸라는 저자의 의견에 동의하시는지?",
+          voteItems: [
+            {
+              voteItemId: 3,
+              voteItemTitle: "동의한다",
+            },
+            {
+              voteItemId: 4,
+              voteItemTitle: "반대한다",
             },
           ],
           tag: {
