@@ -1,44 +1,37 @@
 import { useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import HotVoteItem from "../common/HotVoteItem";
-
-const mockData = [
-  {
-    title: "Slide number 1",
-    id: 1,
-    content: "오늘의 인기 투표",
-  },
-  {
-    title: "Slide number 2",
-    id: 2,
-    content: "오늘의 인기 투표",
-  },
-  {
-    title: "Slide number 3",
-    id: 3,
-    content: "오늘의 인기 투표",
-  },
-];
+import { VoteLists } from "@/types/posts";
 
 export default function HotVote() {
-  const [itemData, setItemData] = useState<any[]>([]);
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [itemData, setItemData] = useState<VoteLists[]>([]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({}, [Autoplay()]);
 
   useEffect(() => {
-    if (emblaApi) {
-      //   console.log(emblaApi);
-      setTimeout(() => {
-        setItemData([...mockData]);
-      }, 1500);
-    }
+    if (!emblaApi) return;
+    const fetchHotVote = async () => {
+      const data = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/posts/hot`,
+        {
+          method: "GET",
+        },
+      );
+      const parsedData = await data.json();
+      setItemData(parsedData.data);
+    };
+    fetchHotVote();
   }, [emblaApi]);
 
   return (
-    <section className="embla h-72 w-full overflow-hidden" ref={emblaRef}>
-      <div className="embla__container flex h-full">
-        {itemData.map((data) => (
-          <HotVoteItem data={data} key={data.id} />
-        ))}
+    <section className="m-3 w-full">
+      <h1>실시간 Hot한 투표🔥</h1>
+      <div className="h-full overflow-hidden" ref={emblaRef}>
+        <div className="mt-2 flex h-full gap-3">
+          {itemData.map((data, index) => (
+            <HotVoteItem data={data} key={index} />
+          ))}
+        </div>
       </div>
     </section>
   );

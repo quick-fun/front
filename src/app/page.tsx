@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import RecentVotes from "@/components/home/RecentVotes";
 import CreateVoteButton from "@/components/common/CreateVoteBtn";
 import { GetPostsResponseBody } from "@/types/posts";
