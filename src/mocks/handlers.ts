@@ -111,11 +111,6 @@ export const handlers = [
       // Don't forget to declare a semantic "201 Created"
       // response and send back the newly created post!
       return HttpResponse.json(
-        // {
-        //   votePostId: votePostId,
-        //   voteItemId: voteItemId,
-        //   voteRate: Math.round(Math.random() * 100),
-        // },
         // 투표 게시글에 투표 후
         {
           votePostId: votePostId,
@@ -134,4 +129,72 @@ export const handlers = [
       );
     },
   ),
+  http.get("/posts/hot", () => {
+    return HttpResponse.json<GetPostsResponseBody>({
+      data: [
+        {
+          votePostId: 1,
+          title: "투표 게시글 제목1",
+          content: "투표 게시글 댓글1",
+          voteItems: [
+            {
+              voteItemId: 1,
+              voteItemTitle: "투표 항목 제목1",
+            },
+            {
+              voteItemId: 2,
+              voteItemTitle: "투표 항목 제목2",
+            },
+          ],
+          tag: {
+            tagId: 1,
+            tagTitle: "잡담",
+          },
+          labels: [
+            {
+              labelId: 1,
+              labelTitle: "박빙",
+            },
+            {
+              labelId: 2,
+              labelTitle: "마감 직전",
+            },
+          ],
+          createdAt: "2023-12-27T16:07:12",
+          commentTotalCount: 999,
+        },
+        {
+          votePostId: 2,
+          title: "투표 게시글 제목2",
+          content: "투표 게시글 댓글2",
+          voteItems: [
+            {
+              voteItemId: 3,
+              voteItemTitle: "투표 항목 제목3",
+            },
+            {
+              voteItemId: 4,
+              voteItemTitle: "투표 항목 제목4",
+            },
+          ],
+          tag: {
+            tagId: 1,
+            tagTitle: "잡담",
+          },
+          labels: [
+            {
+              labelId: 1,
+              labelTitle: "박빙",
+            },
+            {
+              labelId: 2,
+              labelTitle: "마감 직전",
+            },
+          ],
+          createdAt: "2023-12-27T16:07:12",
+          commentTotalCount: 999,
+        },
+      ],
+    });
+  }),
 ];
