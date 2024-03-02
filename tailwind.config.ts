@@ -9,9 +9,9 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      sm: "480px", // @media (min-width: 480px) { ... }
-      md: "768px",
-      lg: "990px",
+      sm: { max: "480px" }, // @media (max-width: 480px) { ... }
+      md: { min: "480px", max: "768px" },
+      lg: { min: "768px", max: "990px" },
     },
     colors: {
       blue: "#0092CA",
