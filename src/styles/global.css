@@ -19,7 +19,7 @@ body {
 
 @layer components {
   .main-container {
-    @apply relative m-auto flex w-full max-w-screen-lg flex-col items-center justify-start p-4;
+    @apply relative m-auto flex w-full max-w-[990px] flex-col items-center justify-start p-4;
   }
 
   .btn-blue {

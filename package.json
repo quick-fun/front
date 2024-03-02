@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"npx tsx watch ./src/mocks/http.ts\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "mock": "npx tsx watch ./src/mocks/http.ts"
   },
   "dependencies": {
+    "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-react": "^8.0.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swipe": "^1.7.7"
   },
   "devDependencies": {
     "@heroicons/react": "^2.1.1",
@@ -23,6 +26,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

@@ -38,12 +38,6 @@ const VoteBox = ({ voteData }: VoteBoxItem) => {
     const votedData = addIsVotedToVoteItem(parsedData, voteItemId);
     setVotedItem(votedData);
 
-    console.log(votedItem);
-
-    console.log(
-      votedItem?.voteItems.find((item) => item.isVoted === true)?.voteItemId,
-    );
-
     function addIsVotedToVoteItem(
       voteData: VotedItemState,
       voteItemId: number,
@@ -79,7 +73,6 @@ const VoteBox = ({ voteData }: VoteBoxItem) => {
     const voteRate_not_mine = votedItem?.voteItems.find(
       (item) => item.isVoted === undefined,
     )?.voteRate;
-    console.log(voteRate_mine, voteRate_not_mine);
 
     // 조건에 따라 클래스와 스타일 결정
     const className = isCurrentItemVoted

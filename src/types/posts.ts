@@ -3,7 +3,7 @@
 export interface VoteItem {
   voteItemId: number;
   voteItemTitle: string;
-  voteRate: number;
+  voteRate?: number;
 }
 
 interface TagItem {
