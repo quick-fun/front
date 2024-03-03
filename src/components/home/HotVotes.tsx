@@ -25,11 +25,11 @@ export default function HotVote() {
 
   return (
     <section className="m-3 w-full">
-      <h1>실시간 Hot한 투표🔥</h1>
+      <h1 className="font-bold">실시간 Hot한 투표🔥</h1>
       <div className="h-full overflow-hidden" ref={emblaRef}>
         <div className="mt-2 flex h-full gap-3">
           {itemData.map((data, index) => (
-            <HotVoteItem data={data} key={index} />
+            <HotVoteItem data={data} index={index} key={index} />
           ))}
         </div>
       </div>

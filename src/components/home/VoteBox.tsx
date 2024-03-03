@@ -90,7 +90,7 @@ const VoteBox = ({ voteData }: VoteBoxItem) => {
     <Link
       key={voteData.votePostId}
       href={`/vote/${voteData.votePostId}`}
-      className="flex h-80 w-full flex-col items-center justify-between gap-3 rounded-lg bg-gray-light p-4 sm:p-8"
+      className="flex min-h-80 w-full flex-col items-center justify-between gap-3 rounded-lg bg-gray-light p-2 sm:p-8"
     >
       <div className="w-fit self-baseline rounded bg-yellow px-1 text-xs">
         {voteData.tag.tagTitle}

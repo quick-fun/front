@@ -52,3 +52,29 @@ body {
     @apply absolute left-0 h-full rounded-lg border-b-gray-light bg-gray-white opacity-50;
   }
 }
+
+@layer utilities {
+  .label {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+  .label span {
+    position: absolute;
+    display: block;
+    width: 155px;
+    padding: 4px 0;
+    background-color: #ffc82c;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    left: 42px;
+    top: 20px;
+    transform: rotate(45deg);
+  }
+}
