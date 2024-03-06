@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import VoteBox from "./VoteBox";
 import { GetPostsResponseBody } from "@/types/posts";
-import Link from "next/link";
 
 export default function RecentVote() {
   const [votes, setVotes] = useState<GetPostsResponseBody | undefined>(
