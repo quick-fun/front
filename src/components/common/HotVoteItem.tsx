@@ -1,6 +1,6 @@
 import { VoteLists } from "@/types/posts";
-import { ChatBubbleBottomCenterIcon } from "@heroicons/react/24/outline";
 import { ChatBubbleBottomCenterTextIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 interface HotVoteProp {
   data: VoteLists;
@@ -8,9 +8,11 @@ interface HotVoteProp {
 }
 
 export default function HotVoteItem({ data, index }: HotVoteProp) {
-  console.table(data);
   return (
-    <div className="relative flex min-h-40 min-w-[33%] flex-col justify-between rounded bg-white p-4 shadow-lg sm:min-w-full md:min-w-[50%]">
+    <Link
+      href={`/vote/${data.votePostId}`}
+      className="relative flex min-h-40 min-w-[33%] flex-col justify-between rounded bg-white p-4 shadow-lg sm:min-w-full md:min-w-[50%]"
+    >
       <div className="label-ribbon">
         <span>TOP {index + 1}</span>
       </div>
@@ -23,6 +25,6 @@ export default function HotVoteItem({ data, index }: HotVoteProp) {
         <ChatBubbleBottomCenterTextIcon width={20} height={20} />
         {data.commentTotalCount}
       </div>
-    </div>
+    </Link>
   );
 }
