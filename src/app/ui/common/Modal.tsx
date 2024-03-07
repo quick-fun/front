@@ -41,7 +41,7 @@ const Modal = ({ children }: ModalProps) => {
     >
       {/* 모달 내부 */}
       <div
-        className="absolute left-1/2 top-1/2 flex h-64 min-w-80 -translate-x-2/4 -translate-y-2/4 flex-col rounded-lg bg-white p-4"
+        className="absolute left-1/2 top-1/2 flex h-64 w-screen min-w-80 -translate-x-2/4 -translate-y-2/4 flex-col rounded-lg bg-white p-4"
         onMouseDown={(e) => (clickedRef.current = e.target)}
         onMouseUp={(e) => (clickedRef.current = e.target)}
       >
