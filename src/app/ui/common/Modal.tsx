@@ -12,9 +12,10 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export interface ModalProps {
   children: React.ReactNode;
+  style?: any;
 }
 // TODO: 모달 떠있을때 스크롤 방지
-const Modal = ({ children }: ModalProps) => {
+const Modal = ({ children, style }: ModalProps) => {
   const router = useRouter();
   const clickedRef = useRef<EventTarget>();
 
@@ -41,7 +42,7 @@ const Modal = ({ children }: ModalProps) => {
     >
       {/* 모달 내부 */}
       <div
-        className="absolute left-1/2 top-1/2 flex h-64 w-screen min-w-80 -translate-x-2/4 -translate-y-2/4 flex-col rounded-lg bg-white p-4"
+        className={`absolute left-1/2 top-1/2 flex min-h-64 w-fit min-w-80 -translate-x-2/4 -translate-y-2/4 flex-col rounded-lg bg-white p-4 ${style}`}
         onMouseDown={(e) => (clickedRef.current = e.target)}
         onMouseUp={(e) => (clickedRef.current = e.target)}
       >

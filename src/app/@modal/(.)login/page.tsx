@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const LoginModal = () => {
   return (
-    <Modal>
+    <Modal style={"h-64"}>
       <div className="mt-6 flex h-full flex-col justify-between">
         <h3>
           카카오톡 회원가입으로
